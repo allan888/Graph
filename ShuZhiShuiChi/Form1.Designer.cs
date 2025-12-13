@@ -36,6 +36,8 @@ partial class Form1
         checkBox1 = new System.Windows.Forms.CheckBox();
         checkBox2 = new System.Windows.Forms.CheckBox();
         button3 = new System.Windows.Forms.Button();
+        label3 = new System.Windows.Forms.Label();
+        button4 = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // label1
@@ -100,19 +102,42 @@ partial class Form1
         // button3
         // 
         button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-        button3.Location = new System.Drawing.Point(257, 329);
+        button3.Location = new System.Drawing.Point(234, 431);
         button3.Name = "button3";
-        button3.Size = new System.Drawing.Size(485, 173);
+        button3.Size = new System.Drawing.Size(485, 113);
         button3.TabIndex = 6;
         button3.Text = "计算";
         button3.UseVisualStyleBackColor = true;
         button3.Click += button3_Click;
+        // 
+        // label3
+        // 
+        label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        label3.Location = new System.Drawing.Point(45, 278);
+        label3.Name = "label3";
+        label3.Size = new System.Drawing.Size(287, 66);
+        label3.TabIndex = 7;
+        label3.Text = "有义值计算程序";
+        label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        label3.Click += label3_Click;
+        // 
+        // button4
+        // 
+        button4.Location = new System.Drawing.Point(362, 279);
+        button4.Name = "button4";
+        button4.Size = new System.Drawing.Size(287, 66);
+        button4.TabIndex = 8;
+        button4.Text = "进入";
+        button4.UseVisualStyleBackColor = true;
+        button4.Click += button4_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(965, 586);
+        Controls.Add(button4);
+        Controls.Add(label3);
         Controls.Add(button3);
         Controls.Add(checkBox2);
         Controls.Add(checkBox1);
@@ -123,6 +148,10 @@ partial class Form1
         Text = "曲线生成器";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button button4;
+
+    private System.Windows.Forms.Label label3;
 
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button button1;
