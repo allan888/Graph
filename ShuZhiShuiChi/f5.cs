@@ -210,7 +210,9 @@ namespace ShuZhiShuiChi
             Console.WriteLine($"明细已保存：{Path.GetFullPath(outCsv)}");
             MessageBox.Show($"明细已保存：{Path.GetFullPath(outCsv)}");
             Console.WriteLine(new string('=', 78));
-
+            MessageBox.Show($"垂荡有义值(≈4*RMS) = {heave_sig:F10}   [单位同表格“垂荡”]");
+            MessageBox.Show($"纵摇有义值(≈4*RMS) = {pitch_sig:F10}   [单位同表格“纵摇”]");
+            MessageBox.Show($"不规则波平均增阻     = {R_mean:F10}     [单位同表格“增阻均值”]");
             // 打印 Top 20
             Console.WriteLine($"\n【增阻贡献 Top20（频率=你的表格频点）】");
             var topList = chosen.Details.OrderByDescending(x => x.DR).Take(20).ToList();
