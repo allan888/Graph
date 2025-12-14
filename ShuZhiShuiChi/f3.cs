@@ -436,7 +436,7 @@ namespace ShuZhiShuiChi
             // 设置标题和标签内容
             plot.Title("波浪增阻 RAO 结果（收敛段统计）");
             plot.XLabel("波长船长比 (λ/L)");
-            plot.YLabel("R_raw (收敛均值/偏移量)");
+            plot.YLabel("Raw (收敛均值/偏移量)");
             
             // 设置网格样式
             plot.Grid.MajorLineColor = Colors.Black.WithAlpha(0.2);

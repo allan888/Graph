@@ -17,9 +17,9 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build ShuZhiShuiChi.csproj
+        run: dotnet build ShuZhiShuiChi/ShuZhiShuiChi.csproj
       - name: Publish
-        run: dotnet publish ShuZhiShuiChi.csproj -c Release -r win-x86 -p:PublishSingleFile=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=false -o ./publish --self-contained true
+        run: dotnet publish ShuZhiShuiChi/ShuZhiShuiChi.csproj -c Release -r win-x86 -p:PublishSingleFile=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=false -o ./publish --self-contained true
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
