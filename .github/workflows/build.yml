@@ -1,0 +1,31 @@
+﻿name: Build Dotnet Project
+on:
+  push:
+    tags:
+      - 'v*'   # 例如推送 v1.0.0 时触发
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: CheckOut
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+      - name: Restore Dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build ShuZhiShuiChi.csproj
+      - name: Publish
+        run: dotnet publish ShuZhiShuiChi.csproj -c Release -r win-x86 -p:PublishSingleFile=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=false -o ./publish --self-contained true
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: CHANGELOG.md
+          files: publish/ShuZhiShuiChi.exe
+          draft: false
+          fail_on_unmatched_files: true
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
